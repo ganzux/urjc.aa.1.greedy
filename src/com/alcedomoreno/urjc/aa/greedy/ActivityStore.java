@@ -3,6 +3,8 @@ package com.alcedomoreno.urjc.aa.greedy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class ActivityStore {
 
@@ -17,17 +19,16 @@ public class ActivityStore {
 		activities.add( activity );
 	}
 
-
-	@SuppressWarnings("unchecked")
 	public List<Activity> selectActivities(){
 
-		List<Activity> copyList = new ArrayList<Activity>();
-		copyList.addAll( activities );
-		Collections.sort( copyList );
-		
+		Queue<Activity> queue = new PriorityQueue<Activity>();
+		queue.addAll( activities );
+
 		List<Activity> notSolappedActivities = new ArrayList<Activity>();
 
-		for ( Activity activity:copyList ){
+		while( !queue.isEmpty() ){
+			Activity activity = queue.remove();
+
 			// we put the 1st one
 			if ( notSolappedActivities.isEmpty() )
 				notSolappedActivities.add( activity );
