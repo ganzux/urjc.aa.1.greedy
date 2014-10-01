@@ -18,12 +18,16 @@ public class ActivityStore {
 	}
 
 
+	@SuppressWarnings("unchecked")
 	public List<Activity> selectActivities(){
-		Collections.sort( activities );
 
+		List<Activity> copyList = new ArrayList<Activity>();
+		copyList.addAll( activities );
+		Collections.sort( copyList );
+		
 		List<Activity> notSolappedActivities = new ArrayList<Activity>();
 
-		for ( Activity activity:activities ){
+		for ( Activity activity:copyList ){
 			// we put the 1st one
 			if ( notSolappedActivities.isEmpty() )
 				notSolappedActivities.add( activity );

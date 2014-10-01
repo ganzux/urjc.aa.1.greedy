@@ -3,7 +3,7 @@ package com.alcedomoreno.urjc.aa.greedy;
 import java.util.List;
 
 
-public class Activity implements Comparable{
+public class Activity implements Comparable<Object>{
 	
 	private int init;
 	private int end;

@@ -7,20 +7,23 @@ public class Main {
 	public static void main( String[] args ) throws Exception{
 		ActivityStore as = new ActivityStore();
 		
-		as.add( new Activity(11,21) );	// 0
-		as.add( new Activity(24,29) );	// 1
-		as.add( new Activity(7,8) );	// 2
-		as.add( new Activity(0,3) );	// 3
-		as.add( new Activity(5,11) );	// 4
-		as.add( new Activity(15,25) );	// 5
-		as.add( new Activity(23,24) );	// 6
-		as.add( new Activity(2,18) );	// 7
-		as.add( new Activity(16,20) );	// 8
-		as.add( new Activity(15,24) );	// 9
+		as.add( new Activity(0,1) );	// 0
+		as.add( new Activity(4,5) );	// 1
+		as.add( new Activity(3,5) );	// 2
+		as.add( new Activity(3,10) );	// 3
+		as.add( new Activity(7,13) );	// 4
+		as.add( new Activity(1,4) );	// 5
+		as.add( new Activity(7,12) );	// 6
+		as.add( new Activity(3,9) );	// 7
+		as.add( new Activity(6,8) );	// 8
 		
 		List<Activity> myAct = as.selectActivities();
 		
 		// INIT LIST:
+		System.out.println( "Original List" );
+		System.out.println( as );
+
+		System.out.println( "\n\nGreedy Algorithm" );
 		System.out.println( myAct );
 
 		// Not Solapped List
